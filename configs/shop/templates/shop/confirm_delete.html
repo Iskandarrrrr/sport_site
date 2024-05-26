@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="container d-flex justify-content-center p-5 ">
+    <div class="col-6 card p-5 bg-dark text-light">
+        <form method="post" action="">
+            {% csrf_token %}
+            <h5 class="text-center">Are you want delete "{{ article.title }}" ?</h5>
+            <br>
+            <div class="d-flex justify-content-evenly">
+                <input class="btn btn-danger btn-lg" type="submit" value="Yes, delete !">
+                <a href="{% url 'article' article.id %}" class="btn btn-success btn-lg">Back</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock main %}
